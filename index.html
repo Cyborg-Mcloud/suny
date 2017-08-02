@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Suny</title>
+
+  </head>
+  <style>
+	body {color:white; margin:0px; padding:0px;}
+	a {text-decoration:none; color:white;}
+  </style>
+  <body style='padding:0; border:0; margin:0; background-color:#244697;'>
+  
+
+<script>
+
+function onDeviceReady() 
+	{
+    document.removeEventListener('deviceready', onDeviceReady, false);
+
+	console.log("device ready, getting position");
+
+	setTimeout("StartWebView();",100); 
+    }
+
+
+document.addEventListener("deviceready", onDeviceReady, false);
+
+
+function StartWebView()
+	{
+	var url='http://suny.design.ge/?myid='+Math.random()*10000000;
+	console.log(url);
+	ref = cordova.InAppBrowser.open(url, '_self', 'location=no, clearcache=yes');
+	}
+
+
+
+</script>
+
+</body>
+
+
+
+</html>
